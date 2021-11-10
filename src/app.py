@@ -30,8 +30,8 @@ def sitemap():
 
 @app.route('/members', methods=['GET'])
 def get_members():
-    members = jackson_family.get_all_members()
-    return jsonify(members=members), 200
+    result = jackson_family.get_all_members()
+    return jsonify(result=result[0]), result[1]
 
 
 @app.route('/member/<int:id>', methods=['GET'])
